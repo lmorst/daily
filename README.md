@@ -9,4 +9,17 @@ r++;sum++;判断sum<k
  dp
 
                   
-### dp
+### 二分
+找最小
+ while(l<=r)
+ { if(cheack) r=mid-1;
+ else l=mid+1;
+ }
+ return l;
+ 
+ 找最大 
+ while(l<=r)
+ {
+ if（check） {ans=mid; l=mid+1;
+ else r=mid-1;
+
