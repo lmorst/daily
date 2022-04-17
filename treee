@@ -1,0 +1,41 @@
+线段树(不是完全二叉树：
+1.对于 某一个数加x; [x,y]区间的和 （解决线段问题的树形结构）
+ 根节点(1,n) 每个节点记录对应区间的和，某个数加1，所访问节点加1(logn),查询(logn)
+  logn层 最多开4n
+  int n,m,f[4*n];下表为i的节点对应区间的和
+  buildtree {int k,int l, int r}
+   {
+      if(l==r) { f[k]=a[l;
+      return;}
+      int m=(l+r)>>1;
+      build(k+k,l,m)
+      build(k+k+1,m+1,l)
+      f[k]=f[k+k]+f[k+k+1];
+   }
+   
+  
+  
+  add(int k,int l,int r,int x,int y)
+  {
+     f[k]+=y; 
+     if(l==r) return;
+     int m=(l+r)>>1;
+     if(m>x) add(k+k,l,m,x,y);
+     else add(k+k+1,m+1,l,x,y);
+  }
+  
+  
+  long long int calc(int k,int l,int r,int s,int t)
+  {
+        if(l==s&&r==t) return f[k];
+        int m=(l+r)>>1;
+        if(t<=m) return calc(k+k,l,m,s,t)
+        if(s>m) return calc(k+k+1,m+1,r,s,t)
+        return alc(k+k,l,m,s,m)+alc(k+k+1,m+1,r,m+1,t)
+  }
+  
+ 
+ 线段问题，单点操作和区间操作
+ 
+ 
+ 2.树状数组
